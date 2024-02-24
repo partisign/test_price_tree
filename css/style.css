@@ -12,11 +12,57 @@
   font-size: 16rem;
   color: #363636;
 }
-
+body {
+  background-color: #888888;
+}
+.tree ul {
+  list-style: none;
+}
+.tree li {
+  margin-top: 10rem;
+}
+.tree ul ul {
+  padding-left: 10rem;
+}
 .container {
   width: 400rem;
   margin: 50rem auto;
   padding: 30rem;
   background-color: rgb(255, 255, 255);
   border-radius: 10rem;
+}
+.tree__item-line {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rem dashed rgb(148, 148, 148);
+}
+.tree__item-line--has-child > .tree__item-line-title {
+  font-weight: 600;
+  cursor: pointer;
+}
+.tree__item-line--has-child {
+  border-bottom: none;
+  justify-content: start;
+}
+.tree__item-line-price {
+  align-self: last baseline;
+  font-style: italic;
+}
+.tree__item-line-price::after {
+  content: "р.";
+  margin-left: 2rem;
+}
+.tree__item-line--has-child::before {
+  content: "";
+  display: inline-block;
+  width: 0rem;
+  height: 0rem;
+  border-style: solid;
+  border-width: 5rem 8rem 5rem 0rem;
+  border-color: transparent #000 transparent transparent;
+  margin-right: 5rem;
+  transform: translateY(40%) rotate(-90deg);
+}
+.tree__item-line--has-child.expanded::before {
+  transform: translateY(40%) rotate(180deg);
 }
