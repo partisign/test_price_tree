@@ -3,4 +3,5 @@
   array.sort((a, b) => {
     b.node - a.node;
   });
+  git;
 }
