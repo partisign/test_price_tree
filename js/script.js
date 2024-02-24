@@ -1,6 +1,6 @@
 ﻿import { fetchData } from "./fetchDataService.js";
-import { sortAray } from "./helpers.js";
+import { createTree } from "./createTree.js";
 const { services } = await fetchData();
-sortAray(services);
-console.table(services);
+const UlTree = createTree(services, null);
 const rootElement = document.getElementById("tree");
+rootElement.appendChild(UlTree);
